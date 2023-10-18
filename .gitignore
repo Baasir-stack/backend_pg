@@ -1,0 +1,8 @@
+1/node_modules
+Blogify/node_modules
+Multer/node_modules
+REST API/node_modules
+URL SHORTNER/node_modules
+
+git rm -r --cached node_modules
+git commit -m "Remove node_modules from version control"
