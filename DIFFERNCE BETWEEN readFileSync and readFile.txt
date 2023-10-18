@@ -1,0 +1,9 @@
+DIFFERNCE BETWEEN readFileSync and readFile:
+
+readFileSync return krta hai kch na kch tou ham try catch krke err ya result recieve krskte
+
+while
+
+readFile(Async) return nhi krta balke wo expect krta hai k aap callback function provide krogai jiske zariye app err ya result resolve krogai.
+
+writeFileSync b return krta hai Whereas writeFile(Async) nhi krta return.

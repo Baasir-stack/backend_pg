@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <%- include('./styles/blog.ejs') %>
+
+            <title>Document</title>
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+
+
+
+
+        <div class="container mt-3">
+
+            <div class="blog-card">
+                <h2 class="blog-title">
+                    <%= blog.title %>
+                </h2>
+                <img class="blog-image" src="<%= blog.coverImageURL %>" alt="Blog Image">
+                <div class="pre-container">
+                    <pre class="blog-body">
+                     <%= blog.body%>
+                    </pre>
+                </div>
+                <div class="container mt-2">
+                    <h5>Created By</h5>
+                    <img src="<%= user.profileImageURL %>" style="margin-bottom: 10px;" alt="" width="50px"> <br>
+                    <b >
+                        <%= blog.createdBy.fullName%>
+                    </b>
+
+                </div>
+
+                <% if (locals.user) { %>
+
+                    <div class="container mt-4">
+                        <h1>Comments (<%= comments.length %>)</h1>
+                        <form action='/blogs/comments/<%= blog._id %>' method="post">
+                            <div class="form-group">
+                                <input type="text" name="content" placeholder="Enter you comment" class="form-control"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary mt-2" style="width: 10%;">Add</button>
+                            </div>
+                        </form>
+
+                       
+
+                    </div>
+                    <% } %>
+                    <div class="container mt-3">
+                            
+                        <% comments.forEach(comment => { %>
+                            <pre style="color: rgb(90, 90, 146);"><%= comment.content %></pre>
+                        <% }) %>
+                        <img src="<%= user.profileImageURL %>" style="margin-bottom: 10px;" alt="" width="50px"> <br>
+                        <b>
+                            <%= user.name%>
+                        </b>
+                    </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+        <%- include('./partials/script.ejs') %>
+</body>
+
+</html>

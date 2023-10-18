@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <%- include('./styles/signup.ejs') %>
+
+ 
+    <title>Document</title>
+</head>
+<body>
+  <%- include('./partials/nav.ejs') %>
+
+
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="/users/signup" method="post">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Sign Up">
+          </div>
+        </form>
+      </div>
+    
+  <%- include('./partials/script.ejs') %>
+
+</body>
+</html>

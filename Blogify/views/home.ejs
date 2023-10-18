@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs') %>
+  <%- include('./styles/home.ejs') %>
+
+    <title>Document</title>
+</head>
+<body>
+  <%- include('./partials/nav.ejs') %>
+
+    <div class="container mt-3">
+      <% blogs.forEach(blog => { %>
+        <div class="blog-card">
+          <img src='<%= blog.coverImageURL %>' alt="Blog Image">
+          <h2><%= blog.title %></h2>
+          <p>Here is a brief excerpt of the blog content. It provides a glimpse of what the blog is about.</p>
+          <a href="/blogs/<%- blog._id %>" class="view-more-btn">View more</a>
+        </div>
+      <% }) %>
+       
+    </div>
+
+  <%- include('./partials/script.ejs') %>
+</body>
+</html>

@@ -1,0 +1,13 @@
+REST API -JSON
+
+GET /users - HTML Document Reader
+GET /api/users - List all users JSON 
+
+POST /api/users - Create New User
+
+PUT /api/users/:id - Edit the User with ID 1
+PUT /api/users/:id - Edit the User with ID 2
+
+DELETE /api/users/:id - Delete the User with ID 1
+
+
